@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
+  
   StyleSheet,
   ScrollView,
   View,
@@ -23,13 +23,31 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
+import { createStackNavigator } from "@react-navigation/stack";
+const Stack=createStackNavigator()
 function App() {
   return (
-    
+    <NavigationContainer>
+        <Stack.Navigator initialRouteName="login">
+        <Stack.Screen name="login" component={loginf}/>
+        <Stack.Screen name="welcome" component={welcomef}/>
+      </Stack.Navigator>
+    </NavigationContainer>
       
   );
 }
+
+function loginf()
+  {
+    return (<View> 
+      <Text> Login Screen </Text></View>);
+  }
+
+  function welcomef()
+  {
+    return (<View> 
+      <Text> Login Screen </Text></View>);
+  }
 
 const styles = StyleSheet.create({
   scrollView: {
